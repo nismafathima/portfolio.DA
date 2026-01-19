@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisma Fatima - Data Analyst Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .hero-contact {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+        }
+
+        .contact-item a {
+            color: #6366f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #a855f7;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 2.5s ease-in;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            text-align: center;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: #6366f1;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #6366f1;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(99, 102, 241, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Projects */
+        .project-section-header {
+            margin-bottom: 3rem;
+            margin-top: 4rem;
+        }
+
+        .project-section-header:first-child {
+            margin-top: 0;
+        }
+
+        .project-category-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .project-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            border-radius: 2px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #a855f7;
+            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+        }
+
+        .project-category {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            color: #a855f7;
+            gap: 0.8rem;
+        }
+
+        /* Education Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #6366f1;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            border-left-color: #a855f7;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .timeline-year {
+            color: #ec4899;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-category-title {
+                font-size: 2rem;
+            }
+
+            .hero-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NISMA FATIMA</h1>
+            <p class="hero-subtitle">Data Analyst | Business Analyst</p>
+            <p class="hero-subtitle"> Python | SQL | Machine Learning | Power BI | Tableau | Inferential Statistics| MLOps</p>
+            
+            <div class="hero-contact">
+                <div class="contact-item">
+                    📧 <a href="mailto:nismafathima2001@gmail.com">nismafathima2001@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    📱 <a href="tel:+918807717086">+91 8807717086</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://github.com/nismafathima" target="_blank">github.com/nismafathima</a>
+                </div>
+                <div class="contact-item">
+                    📍 Tirunelveli, Tamil Nadu, India
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Tools Mastered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="about-text">
+                Analytical Data Analyst with hands-on experience in Python, SQL, Excel, Power BI, Tableau, and Statistical Modeling. Proficient in transforming complex datasets into actionable insights through advanced data cleaning, visualization, and reporting. Skilled in building interactive dashboards, conducting hypothesis testing, and delivering data-driven recommendations for business growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Key Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>💻 Programming & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">scikit-learn</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>📊 Visualization & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">EDA</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">KPI Tracking</span>
+                        <span class="skill-tag">Data Wrangling</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>📈 Statistics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Descriptive Statistics</span>
+                        <span class="skill-tag">Inferential Statistics</span>
+                        <span class="skill-tag">Z-test</span>
+                        <span class="skill-tag">T-test</span>
+                        <span class="skill-tag">Chi-square</span>
+                        <span class="skill-tag">ANOVA</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🤖 Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linear Regression</span>
+                        <span class="skill-tag">Logistic Regression</span>
+                        <span class="skill-tag">Decision Tree</span>
+                        <span class="skill-tag">Random Forest</span>
+                        <span class="skill-tag">K-Means</span>
+                        <span class="skill-tag">PCA</span>
+                        <span class="skill-tag">LDA</span>
+                        <span class="skill-tag">Time Series Forecasting</span>
+                        <span class="skill-tag">XGBoost</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>MLOps & Deployment</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Model Versioning</span>
+                        <span class="skill-tag">Pipeline Concepts</span>
+                        <span class="skill-tag">Experimental Tracking</span>
+                        <span class="skill-tag">Basic Model Deployment</span>
+                        <span class="skill-tag">Git-Hub Based Workflow</span>
+                        <span class="skill-tag">Reproducible ML Practices</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Analytical Thinking</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Data-Driven Decision Making</span>
+                        <span class="skill-tag">Clear Communication of Insights</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Continuous Learning Mindset</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- SQL Projects -->
+            <div class="project-section-header">
+                <h3 class="project-category-title">💾 SQL Database Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-category">SQL Database</span>
+                    <h3>Hospital Management System</h3>
+                    <p>Designed a relational database to manage patient records, appointments, and billing. Implemented optimized SQL queries using joins, subqueries, and aggregations.</p>
+                    <a href="https://github.com/nismafathima/sql-hospital-project" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-category">SQL Database</span>
+                    <h3>Library Management System</h3>
+                    <p>Built a complete library database with book issue/return workflows and overdue tracking. Implemented advanced SQL features such as triggers and CTEs.</p>
+                    <a href="https://github.com/nismafathima/sql-library-project" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Machine Learning Projects -->
+            <div class="project-section-header">
+                <h3 class="project-category-title">🤖 Machine Learning Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-category">Machine Learning</span>
+                    <h3>Netflix Movies & TV Shows Analysis</h3>
+                    <p>Conducted EDA and trend analysis to uncover content performance patterns and user preferences. Built predictive models to forecast show popularity and optimize content strategy.</p>
+                    <a href="https://github.com/nismafathima/netflix-project" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-category">Machine Learning</span>
+                    <h3>Walmart Sales Forecasting</h3>
+                    <p>Developed time series models to forecast sales and seasonal demand. Generated actionable insights for inventory planning and demand management.</p>
+                    <a href="https://github.com/nismafathima/Walmart-project-" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-category">Machine Learning</span>
+                    <h3>COVID-19 Data Analysis</h3>
+                    <p>Analyzed global pandemic trends using statistical analysis and visualization. Delivered clear insights on case patterns, recovery rates, and growth trends.</p>
+                    <a href="https://github.com/nismafathima/covid-19-project" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Excel Projects -->
+            <div class="project-section-header">
+                <h3 class="project-category-title">📊 Excel Visualization Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-category">Excel Visualization</span>
+                    <h3>Sales Analysis Dashboard</h3>
+                    <p>Built interactive dashboards using pivot tables, slicers, and KPIs to track sales performance and identify revenue drivers.</p>
+                    <a href="https://github.com/nismafathima/sales-dashboard-project-excel" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Power BI Projects -->
+            <div class="project-section-header">
+                <h3 class="project-category-title">📈 Power BI Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-category">Power BI</span>
+                    <h3>Sales Analysis Dashboard</h3>
+                    <p>Created dynamic Power BI reports with drill-down, filtering, and trend analysis to monitor sales metrics.</p>
+                    <a href=" https://github.com/nismafathima/salaes-analysis-power-bi" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-category">Power BI</span>
+                    <h3>Heart Patient Analysis Dashboard</h3>
+                    <p>Designed healthcare analytics dashboards to visualize patient trends, risk factors, and outcomes.</p>
+                    <a href="https://github.com/nismafathima/Heart-analysiss-power-bi-" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Tableau Projects -->
+            <div class="project-section-header">
+                <h3 class="project-category-title">📉 Tableau Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-category">Tableau</span>
+                    <h3>Hyundai Cars Sales Performance Analysis</h3>
+                    <p>Developed interactive dashboards to analyze regional sales performance and time-based trends.</p>
+                    <a href="https://github.com/nismafathima/Tableau-project-2" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-category">Tableau</span>
+                    <h3>Customer Call Data Analysis</h3>
+                    <p>Analyzed call center performance using visual dashboards and key metrics.</p>
+                    <a href="https://github.com/nismafathima/Tableau-project-1" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Statistics Projects -->
+            <div class="project-section-header">
+                <h3 class="project-category-title">📊Infrential Statistics Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-category"> Infrential Statistics</span>
+                    <h3>Employee Productivity Analysis</h3>
+                    <p>Conducted hypothesis testing and statistical inference to evaluate productivity factors. Provided data-backed recommendations to improve workforce efficiency.</p>
+                    <a href="https://github.com/nismafathima/infrenstial-statistics-project" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-category">Inferential Statistics</span>
+                    <h3>Advanced Inferential Statistics Employee Perfomance Analysis</h3>
+                    <p>Applied advanced statistical tests to real-world datasets and interpreted results for decision-making.</p>
+                    <a href="https://github.com/nismafathima/infrential-statistics-project" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <h3>Executive Post Graduate in Data Science & Artificial Intelligence </h3>
+                    <p>Conducted by IHUB Divyasampark IIT Roorkee in association with Intellipat</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <h3>Bachelor of Science in Physics</h3>
+                    <p>Annai Hajira Women's College, Manonmaniam Sundaranar University</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Certifications</div>
+                    <h3>Professional Certifications</h3>
+                    <p>
+                        • Executive Post Graduate in Data Science & Artificial Intelligence — Conducted by IHUB Divyasampark IIT Roorkee in association with Intellipat<br>
+                        • Python Programming        —  Intellipaat<br>
+                        • SQL for Data Analytics    —  Intellipaat<br>
+                        • Excel for Data Analytics  —  Intellipaat
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
